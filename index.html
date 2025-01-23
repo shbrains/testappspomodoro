@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f6f8ff 0%, #e9f0ff 100%);
+            color: #2d3748;
+        }
+
+        .timer-container {
+            text-align: center;
+            padding: 2.5rem;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            min-width: 320px;
+        }
+
+        h1 {
+            margin: 0 0 1.5rem 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .mode-indicator {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .time-display {
+            font-size: 5rem;
+            margin: 1.5rem 0;
+            font-weight: 700;
+            color: #2d3748;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        button {
+            font-size: 1rem;
+            padding: 0.8rem 1.5rem;
+            cursor: pointer;
+            background-color: #4F46E5;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            min-width: 120px;
+        }
+
+        button:hover {
+            background-color: #4338CA;
+            transform: translateY(-1px);
+        }
+
+        button:disabled {
+            background-color: #E2E8F0;
+            cursor: not-allowed;
+        }
+
+        .stats-container {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #E2E8F0;
+        }
+
+        .stats-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+        }
+
+        .stats {
+            font-size: 1rem;
+            color: #4a5568;
+        }
+
+        .work-mode {
+            color: #4F46E5;
+        }
+
+        .break-mode {
+            color: #10B981;
+        }
+
+        #endSessionBtn {
+            background-color: #DC2626;
+        }
+
+        #endSessionBtn:hover {
+            background-color: #B91C1C;
+        }
+
+        #modeToggleBtn {
+            background-color: #8B5CF6;
+        }
+
+        #modeToggleBtn:hover {
+            background-color: #7C3AED;
+        }
+    </style>
+</head>
+<body>
+    <div class="timer-container">
+        <h1>Pomodoro Timer</h1>
+        <div class="mode-indicator" id="modeDisplay">Work Mode</div>
+        <div class="time-display" id="timeDisplay">25:00</div>
+        <div class="button-container">
+            <button id="startBtn">Start</button>
+            <button id="resetBtn">Reset</button>
+            <button id="modeToggleBtn">Switch to Break</button>
+            <button id="endSessionBtn">End Session</button>
+        </div>
+        <div class="stats-container">
+            <div class="stats-title">Statistics</div>
+            <div class="stats" id="statsDisplay">
+                Completed Pomodoros: 0
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
